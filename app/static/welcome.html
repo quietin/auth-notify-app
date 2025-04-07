@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script defer src="/static/welcome.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .notification {
+            display: none;
+            background: #eee; /* default gray */
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .notification.unread {
+            background: #f8d775; /* highlight yellow */
+        }
+
+        .notification-details {
+            display: none;
+            background: #fff5d1;
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <h1>👋 Welcome!</h1>
+    <form method="post" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+<!-- 默认隐藏 -->
+<div id="notification" class="notification" onclick="toggleDetails()">
+    <span id="notification-label">📭 No unread notifications yet.</span>
+</div>
+
+
+<div id="notification-details" class="notification-details">
+    <ul id="notification-list">
+        <!-- Will be dynamically filled -->
+    </ul>
+</div>
+
+</body>
+</html>
