@@ -12,7 +12,8 @@ This project is designed as a minimal, well-structured implementation of real-ti
 ### User Authentication
 - Registration page (email + password)
 - Login page with JWT-based authentication
-- Session stored securely in HTTP-only cookies
+- Logout endpoint to clear session and redirect to login page
+- JWT token is stored securely in HTTP-only cookies for secure session management
 - Welcome page shown after login
 
 ### Simple Frontend
@@ -27,6 +28,16 @@ This project is designed as a minimal, well-structured implementation of real-ti
 ### Testing
 - Unit tests and integration tests using `pytest` and `httpx`
 - All tests run against an in-memory SQLite database for isolation and speed
+
+## Tech Stack
+
+- **FastAPI**: Backend web framework
+- **SQLModel**: ORM and schema definition
+- **fastapi-login**: JWT-based authentication library, used for login, token encoding/decoding, and session management
+- **httpx**: Async HTTP client used for integration tests
+- **pytest**: Test framework for unit and integration tests
+- **Docker + Docker Compose**: Containerization and orchestration
+
 
 ### Environment-based Configuration
 - Supports `.env.local` for local development
