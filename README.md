@@ -44,6 +44,34 @@ This project is designed as a minimal, well-structured implementation of real-ti
 - Supports `.env.docker` for Docker-based setup
 - Easily extendable for different environments
 
+## Project Structure
+
+```
+auth-notify-app/
+├── app/                          # Main application package
+│   ├── api/                      # API route definitions (e.g., auth, websocket)
+│   ├── models/                   # Pydantic and SQLModel models
+│   ├── services/                 # Business logic (user management, notification manager)
+│   ├── static/                   # Frontend HTML and JavaScript files
+│   ├── utils/                    # Utility modules (e.g., logger, config)
+│   ├── main.py                   # FastAPI app initialization
+│   └── database.py               # Database session setup
+│
+├── tests/                        # Unit and integration tests
+│   ├── integration/              # Integration tests for APIs and workflows
+│   └── unit/                     # Unit tests (e.g., services, utils)
+│
+├── snapshots/                   # UI screenshots for documentation or reference
+├── .env.local                   # Local environment variables
+├── .env.docker                  # Docker environment variables
+├── Dockerfile                   # Docker build instructions
+├── docker-compose.yml           # Docker multi-service configuration
+├── requirements.txt             # Project dependencies
+├── pytest.ini                   # Pytest configuration
+├── .gitignore                   # Files and folders to exclude from Git
+└── README.md
+```
+
 ## Design Decisions & Trade-offs
 
 ### Design Decisions
@@ -205,33 +233,7 @@ docker-compose run --rm web pytest
 This assumes that your `docker-compose.yml` defines a `web` service and installs all required test dependencies.
 
 
-## Project Structure
 
-```
-auth-notify-app/
-├── app/                          # Main application package
-│   ├── api/                      # API route definitions (e.g., auth, websocket)
-│   ├── models/                   # Pydantic and SQLModel models
-│   ├── services/                 # Business logic (user management, notification manager)
-│   ├── static/                   # Frontend HTML and JavaScript files
-│   ├── utils/                    # Utility modules (e.g., logger, config)
-│   ├── main.py                   # FastAPI app initialization
-│   └── database.py               # Database session setup
-│
-├── tests/                        # Unit and integration tests
-│   ├── integration/              # Integration tests for APIs and workflows
-│   └── unit/                     # Unit tests (e.g., services, utils)
-│
-├── snapshots/                   # UI screenshots for documentation or reference
-├── .env.local                   # Local environment variables
-├── .env.docker                  # Docker environment variables
-├── Dockerfile                   # Docker build instructions
-├── docker-compose.yml           # Docker multi-service configuration
-├── requirements.txt             # Project dependencies
-├── pytest.ini                   # Pytest configuration
-├── .gitignore                   # Files and folders to exclude from Git
-└── README.md
-```
 
 ## Future Improvements
 
