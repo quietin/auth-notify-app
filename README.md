@@ -61,6 +61,7 @@ auth-notify-app/
 │   ├── integration/              # Integration tests for APIs and workflows
 │   └── unit/                     # Unit tests (e.g., services, utils)
 │
+├── sql/                         # SQL scripts for creating the database
 ├── snapshots/                   # UI screenshots for documentation or reference
 ├── .env.local                   # Local environment variables
 ├── .env.docker                  # Docker environment variables
