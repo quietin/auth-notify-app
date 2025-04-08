@@ -3,8 +3,8 @@ from fastapi import Depends, HTTPException
 from sqlmodel import Session, select
 
 from app.database import get_session
-from app.models import UserCreate, User
-from app.utils import get_password_hash, verify_password
+from app.models.user import UserCreate, User
+from app.utils.security import get_password_hash, verify_password
 
 
 logger = logging.getLogger(__name__)
@@ -33,5 +33,5 @@ def authenticate_user(email: str, password: str, session: Session) -> User:
         logger.info("Login failed for email: %s", email)
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    logger.info("fetch user:%s ", user.model_dump());
+    logger.info("fetch user:%s ", user.model_dump())
     return user

@@ -1,0 +1,1 @@
+create database auth_db if not exists;

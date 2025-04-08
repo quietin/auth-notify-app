@@ -2,9 +2,9 @@
 import logging
 import sys
 from logging.handlers import TimedRotatingFileHandler
-from pathlib import Path
+from app.config import BASE_DIR
 
-LOG_DIR = Path("logs")
+LOG_DIR = BASE_DIR.parent / "logs"
 LOG_DIR.mkdir(exist_ok=True)
 
 def init_logging(level: int = logging.INFO) -> None:
